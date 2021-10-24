@@ -1,5 +1,5 @@
 import express, { Application } from 'express';
-import { categoriesRoutes } from './routes';
+import { categoriesRoutes, specificationsRoutes } from './routes';
 
 class App {
   private app: Application;
@@ -20,6 +20,7 @@ class App {
 
   private routes(): void {
     this.app.use('/api/v1', categoriesRoutes);
+    this.app.use('/api/v1', specificationsRoutes);
   }
 
   public get getApp(): Application {
