@@ -25,7 +25,7 @@ categoriesRoutes.post(
 );
 
 categoriesRoutes.post(
-  '/import',
+  '/categories/import',
   upload.single('file'),
   (req: Request, res: Response, next: NextFunction) => {
     importCategoryController.handle(req, res, next);
