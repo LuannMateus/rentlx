@@ -130,4 +130,8 @@ dist
 tmp/
 tmp/**
 
+### Docker ###
+.docker
+.docker/**
+
 # End of https://www.toptal.com/developers/gitignore/api/node
