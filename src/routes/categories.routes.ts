@@ -1,5 +1,5 @@
 import { Router, Request, Response, NextFunction } from 'express';
-import { createCategoryController } from '../modules/cars/useCases/createCategory';
+import createCategoryController from '../modules/cars/useCases/createCategory';
 import { listCategoriesController } from '../modules/cars/useCases/listCategories';
 import { importCategoryController } from '../modules/cars/useCases/importCategory';
 import multer from 'multer';
@@ -20,7 +20,7 @@ categoriesRoutes.get(
 categoriesRoutes.post(
   '/categories',
   (req: Request, res: Response, next: NextFunction) => {
-    createCategoryController.handle(req, res, next);
+    createCategoryController().handle(req, res, next);
   }
 );
 
