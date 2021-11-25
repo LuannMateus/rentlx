@@ -6,11 +6,11 @@ interface ICreateSpecificationDTO {
 }
 
 interface ISpecificationsRepository {
-  findAll(): Specification[];
+  findAll(): Promise<Specification[]>;
 
-  findByName(name: string): Specification;
+  findByName(name: string): Promise<Specification>;
 
-  save({ name, description }: ICreateSpecificationDTO);
+  save({ name, description }: ICreateSpecificationDTO): Promise<void>;
 }
 
 export { ISpecificationsRepository, ICreateSpecificationDTO };

@@ -99,22 +99,14 @@
     },
     "/api/v1/specifications": {
       "post": {
-        "tags": ["Specification"],
+        "tags": ["Specifications"],
         "summary": "Create a new specification",
         "description": "Create a new specification",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                },
+                "$ref": "#/definitions/Specification",
                 "example": {
                   "name": "Specification name sample",
                   "description": "Specification description sample"
@@ -130,6 +122,19 @@
           "500": {
             "description": "Internal Server Error"
           }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Specification": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
         }
       }
     }
